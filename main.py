@@ -18,7 +18,7 @@ except ImportError:
 
 # Setup logging
 logging.basicConfig(
-    filename='file_organizer.log',
+    filename='cryovault.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
@@ -26,7 +26,7 @@ logging.basicConfig(
 class FileOrganizerApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("File Organizer")
+        self.root.title("Cryovault File Organizer")
         self.root.geometry("900x750")
         self.root.minsize(700, 550)
         self.root.configure(bg='#ffffff')
@@ -45,7 +45,7 @@ class FileOrganizerApp:
             pass
 
         # --- Default configuration ---
-        self.config_file = 'file_organizer_config.json'
+        self.config_file = 'cryovault_config.json'
         self.config = {
             'documents': ['.pdf', '.docx', '.doc', '.txt'],
             'image': ['.jpeg', '.jpg', '.webp', '.svg', '.png', '.PNG'],
@@ -302,7 +302,7 @@ class FileOrganizerApp:
             self.notify('No log to save yet.', level='warning')
             return
         save_path = filedialog.asksaveasfilename(
-            initialfile="logreporganized.csv",
+            initialfile="cryovault_log.csv",
             defaultextension=".csv",
             filetypes=[("CSV files", "*.csv")]
         )
@@ -617,7 +617,7 @@ class FileOrganizerApp:
             return
 
         save_path = filedialog.asksaveasfilename(
-            initialfile="orgpreview.csv",
+            initialfile="cryovault_preview.csv",
             defaultextension=".csv",
             filetypes=[("CSV file", "*.csv")]
         )
@@ -712,7 +712,7 @@ class FileOrganizerApp:
 
         def save_log():
             save_path = filedialog.asksaveasfilename(
-                initialfile="logreporganized.csv",
+                initialfile="cryovault_log.csv",
                 defaultextension=".csv",
                 filetypes=[("CSV files", "*.csv")]
             )
@@ -732,7 +732,7 @@ class FileOrganizerApp:
 
 
 if __name__ == "__main__":
-    print("Starting File Organizer...")
+    print("Starting Cryovault...")
     try:
         import tkinter
         print("Tkinter is available, launching GUI...")

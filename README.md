@@ -1,75 +1,55 @@
-# 🧊 FrostNode | File Organizer Pro ⚡
+# ❄️ Cryovault | File Organizer Toolkit
 
-<!-- Add a banner or screenshot named intro.png in the repo root to display it here -->
-<!-- ![Intro](intro.png) -->
+Bring order to chaos with a clean, cross‑platform file organizer.  
+Scan, categorize, and move files into vault‑like folders with ease.  
+Built with **Python + Tkinter** (optional **ttkbootstrap** themes).
 
-A professional **file organizer** that stays **simple** but packs **practical power**.  
-Built with 🐍 **Python + Tkinter**, with optional 🎨 **ttkbootstrap** themes.
-
-Organize messy folders in minutes with an intuitive UI and quick exports. 🔥
+![Intro](intro.png)
 
 ---
 
 ## ✨ Features
-- 📁 **Select source folder** → scan files for organizing
-- 🗂️ **Category buckets** → create/rename categories on the fly
-- 🔀 **Move or Copy** → send files into per‑category subfolders
-- 📝 **CSV export** → save a summary of file placements
-- 🎛️ **Clean styling** → standard `'TButton'` (no version‑sensitive hacks)
-- 🧩 **Optional themes** → uses `ttkbootstrap` if installed; falls back gracefully
+- 📁 Select a **source folder**, scan file types
+- 🗂️ Create/manage **categories** and destinations
+- 🔎 **Preview** organization to CSV before moving
+- 🔀 **Organize** (move) files into per‑category destinations
+- 📝 Export **CSV** logs
+- 🎨 Uses `ttkbootstrap` if installed; otherwise falls back to standard ttk
 
 ---
 
-## 🚀 Run locally
+## 🚀 Quick Start
 ```bash
-# create & activate venv
 python -m venv .venv
-# Windows: .venv\Scriptsctivate
+# Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
 
-# install deps (pandas is used for CSV export)
 pip install -r requirements.txt
-
 # (optional) nicer themes
 pip install ttkbootstrap
 
-# launch the app
 python main.py
 ```
 
-## 🧭 Quick Start
-1) Open the app and choose your **source folder**.  
-2) Add a few **categories** (e.g., Invoices, Photos, PDFs).  
-3) Select files and choose **Move** or **Copy** into category subfolders.  
-4) Optional: **Export CSV** of results for your records.
+---
 
-## 🛠️ Options & Notes
-- Uses default ttk style: `style='TButton'` for reliability.  
-- If `ttkbootstrap` is present, you can pass `bootstyle='primary' | 'success' | 'info' | ...` to buttons in code.
+## Options & Notes
+- Works without ttkbootstrap — it’s optional.
+- CSV preview filename: `cryovault_preview.csv`
+- Log report default filename: `cryovault_log.csv`
+- Config file: `cryovault_config.json`
+- Log file: `cryovault.log`
 
-## 🐞 Troubleshooting
-- **`type object 'StyleBuilderTTK' has no attribute 'create_round_button_style'`**  
-  Older/newer `ttkbootstrap` builds may not include the helper used by rounded buttons.  
-  This app **does not** request `Rounded.TButton`, so it **runs without error**.
-- **`bootstyle` not recognized** (plain Tk only)  
-  If `ttkbootstrap` isn’t installed, ttk ignores `bootstyle`; the app still works with standard styling.
+---
 
-## 📦 Packaging (optional)
-Create a single-file build with PyInstaller:
+## Packaging (Optional)
 ```bash
 pip install pyinstaller
 pyinstaller --noconfirm --onefile --windowed main.py
 ```
 Builds appear in `dist/`.
 
-## 🧑‍💻 Tech
-- Python 3.9+
-- Tkinter/ttk (standard library)
-- pandas (CSV export)
-- ttkbootstrap (optional)
+---
 
-## 📜 License
-MIT — see [LICENSE](LICENSE).
-
-## 🤝 Contributing
-PRs welcome! Keep changes focused and include before/after notes or screenshots for UI tweaks.
+## License
+MIT — see LICENSE.
